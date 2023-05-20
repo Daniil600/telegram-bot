@@ -1,7 +1,7 @@
 # telegram-bot
 Этого бота можно использовать для функционирования Телеграм-бота с рассылкой уведомлений
 
-Для начала его работы заполните в application.properties следующие поля:
+Для начала его работы заполните в application.properties следующие поля:<br>
 spring.datasource.url      - URL к БД(Базе данных)<br>
 spring.datasource.username - Имя владельца БД <br>
 spring.datasource.password - Пароль владельца БД<br>
