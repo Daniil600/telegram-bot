@@ -15,6 +15,12 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+/**
+ * В этом классе реализованна проверка на необходимость уведомления пользователей, которые отправленны в формате: <01.01.2022 20:00 Сделать домашнюю работу>
+ * @@Scheduled - Делате проверку начала каждой минуты
+ */
+
+
 @SpringBootApplication
 @EnableScheduling
 public class TelegramBotApplication {
@@ -35,7 +41,7 @@ public class TelegramBotApplication {
         if (notifications != null) {
             notifications.forEach(notification -> {
                 logger.info("Processing update: {}", notification);
-                if(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES).isAfter(notification.getLocalDateTime())){
+                if(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES).isEqual(notification.getLocalDateTime())){
                     listener.sendNotification(notification);
                 }
             });

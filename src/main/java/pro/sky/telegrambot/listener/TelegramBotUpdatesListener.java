@@ -19,11 +19,15 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Этот класс отвечает за принятие собщений от пользователей и сохранение их в БД
+ * */
+
+
 @Service
 public class TelegramBotUpdatesListener implements UpdatesListener {
 
     private Logger logger = LoggerFactory.getLogger(TelegramBotUpdatesListener.class);
-
 
     @Autowired
     private TelegramBot telegramBot;
@@ -80,7 +84,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         //проверить, удовлетворяет ли строка паттерну
         Matcher matcher = pattern.matcher(getMessage);
         if (matcher.matches()) {
-            //дата для оповещения
+            //date для оповещения
             String date = matcher.group(1);
             //item это текст для оповещения
             String item = matcher.group(3);
