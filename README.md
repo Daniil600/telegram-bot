@@ -6,7 +6,7 @@
 spring.datasource.username - Имя владельца БД <br>
 spring.datasource.password - Пароль владельца БД<br>
 telegram.bot.token         - Telegram token полученный от https://t.me/BotFather <br>
-telegram.bot.name          - Имя Telegram бота (пример: wither_for_you_bot) <br></b>
+telegram.bot.name          - Имя Telegram бота (пример: wither_for_you_bot)<br></b>
 
-В src/main/java/pro/sky/telegrambot/listener/TelegramBotUpdatesListener.java Вы можете реализовать дополнительную логику вашего бота.
+В <b>src/main/java/pro/sky/telegrambot/listener/TelegramBotUpdatesListener.java</b> Вы можете реализовать дополнительную логику вашего бота.
 Все методы маленькими комментариями описывают его предназначение
