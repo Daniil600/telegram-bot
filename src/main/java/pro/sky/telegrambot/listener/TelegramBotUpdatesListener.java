@@ -8,6 +8,7 @@ import com.pengrad.telegrambot.response.SendResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import pro.sky.telegrambot.model.Notification;
 import pro.sky.telegrambot.repository.NotificationRepository;
@@ -15,13 +16,17 @@ import pro.sky.telegrambot.repository.NotificationRepository;
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Этот класс отвечает за принятие собщений от пользователей и сохранение их в БД
- * */
+ * В этом классе реализованна проверка на необходимость уведомления пользователей, которые отправленны в формате: <01.01.2022 20:00 Сделать домашнюю работу>
+ * @@Scheduled - Делате проверку начала каждой минуты
+ */
 
 
 @Service
@@ -135,6 +140,20 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         String messageText = "Прости, но что то записано не так \uD83D\uDE14";
         SendMessage message = new SendMessage(chatId, messageText);
         SendResponse response = bot.execute(message);
+    }
+
+
+    @Scheduled(cron = "0 0/1 * * * *")
+    private void run() {
+        ArrayList<Notification> notifications = (ArrayList<Notification>) notificationRepository.findNotification(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
+        if (notifications != null) {
+            notifications.forEach(notification -> {
+                logger.info("Processing update: {}", notification);
+                if(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES).isEqual(notification.getLocalDateTime())){
+                    sendNotification(notification);
+                }
+            });
+        }
     }
 }
 
