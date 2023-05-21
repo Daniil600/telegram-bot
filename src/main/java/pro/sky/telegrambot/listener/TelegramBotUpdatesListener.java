@@ -24,8 +24,7 @@ import java.util.regex.Pattern;
 
 /**
  * Этот класс отвечает за принятие собщений от пользователей и сохранение их в БД
- * В этом классе реализованна проверка на необходимость уведомления пользователей, которые отправленны в формате: <01.01.2022 20:00 Сделать домашнюю работу>
- * @@Scheduled - Делате проверку начала каждой минуты
+ * В этом классе Вы можете реализовать дополнительную логику бота и её улучшение
  */
 
 
@@ -83,6 +82,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         String sendMessage;
 
 
+
         Pattern pattern = Pattern.compile("([0-9\\.\\:\\s]{16})(\\s)([\\W+]+)");
         LocalDateTime localDateTime;
 
@@ -132,7 +132,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     }
 
     //Метод для отправки сообщения если что то не так
-    private void defaultMethod(Update update) {
+    protected void defaultMethod(Update update) {
         logger.info("start of defaultMethod : {}", update);
         TelegramBot bot = new TelegramBot(telegramBot.getToken());
         long chatId = update.message().chat().id();
@@ -140,20 +140,6 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         String messageText = "Прости, но что то записано не так \uD83D\uDE14";
         SendMessage message = new SendMessage(chatId, messageText);
         SendResponse response = bot.execute(message);
-    }
-
-
-    @Scheduled(cron = "0 0/1 * * * *")
-    private void run() {
-        ArrayList<Notification> notifications = (ArrayList<Notification>) notificationRepository.findNotification(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
-        if (notifications != null) {
-            notifications.forEach(notification -> {
-                logger.info("Processing update: {}", notification);
-                if(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES).isEqual(notification.getLocalDateTime())){
-                    sendNotification(notification);
-                }
-            });
-        }
     }
 }
 
