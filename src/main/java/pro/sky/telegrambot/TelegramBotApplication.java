@@ -21,9 +21,6 @@ import java.util.ArrayList;
 @SpringBootApplication
 @EnableScheduling
 public class TelegramBotApplication {
-    private Logger logger = LoggerFactory.getLogger(TelegramBotApplication.class);
-
-
     public static void main(String[] args) {
         SpringApplication.run(TelegramBotApplication.class, args);
     }

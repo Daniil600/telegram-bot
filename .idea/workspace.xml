@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e6afb88-45ff-47f4-ae38-f1404f483976" name="Changes" comment="1.2">
+    <list default="true" id="5e6afb88-45ff-47f4-ae38-f1404f483976" name="Changes" comment="Перенёс метод run в TelegramBotUpdatesListener.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/listener/Scheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f7738c41-13f6-43c4-92f8-86dd5ba70d59.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f7738c41-13f6-43c4-92f8-86dd5ba70d59.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f7738c41-13f6-43c4-92f8-86dd5ba70d59/storage_v2/_src_/database/TelegramDB.X5EkDw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f7738c41-13f6-43c4-92f8-86dd5ba70d59/storage_v2/_src_/database/TelegramDB.X5EkDw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/TelegramBotApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/TelegramBotApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/listener/TelegramBotUpdatesListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/sky/telegrambot/listener/TelegramBotUpdatesListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/liquibase/scripts/bot.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/liquibase/scripts/bot.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pro/sky/telegrambot/listener/TelegramBotUpdatesListenerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,15 +23,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="1.0" />
+        <entry key="$PROJECT_DIR$" value="telegramBot_tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +63,6 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/java/Homeworks/Courses/1/telegram-bot&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -72,7 +73,55 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.TelegramBotApplication">
+    <configuration name="TelegramBotUpdatesListenerTest.succesSendMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="telegram-bot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pro.sky.telegrambot.listener.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pro.sky.telegrambot.listener" />
+      <option name="MAIN_CLASS_NAME" value="pro.sky.telegrambot.listener.TelegramBotUpdatesListenerTest" />
+      <option name="METHOD_NAME" value="succesSendMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TelegramBotUpdatesListenerTest.succesSendMessage_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="telegram-bot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pro.sky.telegrambot.listener.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pro.sky.telegrambot.listener" />
+      <option name="MAIN_CLASS_NAME" value="pro.sky.telegrambot.listener.TelegramBotUpdatesListenerTest" />
+      <option name="METHOD_NAME" value="succesSendMessage_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TelegramBotUpdatesListenerTest.successSendMessage_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="telegram-bot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pro.sky.telegrambot.listener.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pro.sky.telegrambot.listener" />
+      <option name="MAIN_CLASS_NAME" value="pro.sky.telegrambot.listener.TelegramBotUpdatesListenerTest" />
+      <option name="METHOD_NAME" value="successSendMessage_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TelegramBotApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="telegram-bot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pro.sky.telegrambot.TelegramBotApplication" />
@@ -80,6 +129,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TelegramBotUpdatesListenerTest.successSendMessage_test" />
+        <item itemvalue="JUnit.TelegramBotUpdatesListenerTest.succesSendMessage_test" />
+        <item itemvalue="JUnit.TelegramBotUpdatesListenerTest.succesSendMessage" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -93,7 +149,12 @@
       <workItem from="1684416687711" duration="2279000" />
       <workItem from="1684421685772" duration="7118000" />
       <workItem from="1684485337940" duration="13252000" />
-      <workItem from="1684592541804" duration="2131000" />
+      <workItem from="1684592541804" duration="4263000" />
+      <workItem from="1684614454346" duration="6045000" />
+      <workItem from="1684662064043" duration="2871000" />
+      <workItem from="1684667998490" duration="3340000" />
+      <workItem from="1684682242495" duration="1430000" />
+      <workItem from="1684700883476" duration="995000" />
     </task>
     <task id="LOCAL-00001" summary="1.1">
       <created>1684488005357</created>
@@ -109,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684499472856</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Исправил отправку сообщений на одну минуту дольше">
+      <created>1684595061274</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684595061274</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Перенёс метод run в TelegramBotUpdatesListener.java">
+      <created>1684664185550</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684664185550</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +193,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.1" />
     <MESSAGE value="1.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.2" />
+    <MESSAGE value="Исправил отправку сообщений на одну минуту дольше" />
+    <MESSAGE value="Перенёс метод run в TelegramBotUpdatesListener.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перенёс метод run в TelegramBotUpdatesListener.java" />
   </component>
 </project>
