@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>1759</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+13753||-9223372036854775808|c|G
+13753||10|c|G
+13753||10|C|G
+13753||10|T|G</Grants>
+      <IntrospectionStateNumber>1819</IntrospectionStateNumber>
       <ServerVersion>14.7</ServerVersion>
-      <StartupTime>1684442253</StartupTime>
+      <StartupTime>1684687944</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -802,7 +810,7 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>1759</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1819</IntrospectionStateNumber>
       <ObjectId>33937</ObjectId>
       <OwnerName>UserDBTelegram</OwnerName>
     </database>
@@ -4252,7 +4260,7 @@ false Zulu
     <schema id="265" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1759</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1819</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
